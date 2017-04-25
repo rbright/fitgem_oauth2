@@ -18,7 +18,7 @@ module FitgemOauth2
   class Client
 
     DEFAULT_USER_ID = '-'
-    API_VERSION = '1'
+    API_VERSION = '1.2'
 
     attr_reader :client_id
     attr_reader :client_secret
