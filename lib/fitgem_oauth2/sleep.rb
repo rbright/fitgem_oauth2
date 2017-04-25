@@ -11,6 +11,16 @@ module FitgemOauth2
       get_call("user/#{user_id}/sleep/date/#{format_date(date)}.json")
     end
 
+    # Return a list of a user's sleep logs (including naps) before or after a
+    # given day with offset, limit, and sort order.
+    def sleep_logs_list(params)
+      url = "user/#{user_id}/sleep/list.json"
+
+      params.update(offset: 0, sort: 'asc')
+
+      get_call(url, params)
+    end
+
     # retrieve sleep goal for the user
     def sleep_goal
       get_call("user/#{user_id}/sleep/goal.json")
